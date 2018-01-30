@@ -41,7 +41,7 @@
                             :descending :sort-by-order-alt
                             :sort))))))
 
-(defsc Table [this {:keys [table/id table/data table/columns table/sort table/remote ui/react-key]}]
+(defsc Table [this {:keys [table/id table/data table/columns table/sort ui/react-key]}]
        {:initial-state (fn [{:keys [id data columns sort remote] :as params}]
                          {:table/id      id
                           :table/data    (vec (map-indexed
@@ -53,10 +53,9 @@
                                                      :data  item}))
                                                 data))
                           :table/columns columns
-                          :table/sort    sort
-                          :table/remote  remote})
+                          :table/sort    sort})
         :ident         [:table/by-id :table/id]
-        :query         [:table/id :ui/react-key {:table/data (prim/get-query TableRow)} :table/columns :table/sort :table/remote]}
+        :query         [:table/id :ui/react-key {:table/data (prim/get-query TableRow)} :table/columns :table/sort]}
        (dom/div #js {:key react-key}
                 (b/table {:styles #{:striped :bordered :hover}}
                          (dom/thead #js {}
