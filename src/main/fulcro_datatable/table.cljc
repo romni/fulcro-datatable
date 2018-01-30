@@ -6,13 +6,13 @@
     [fulcro.client.data-fetch :as df]
     [taoensso.timbre :as timbre]))
 
-
 (defsc TableRow [this {:keys [row/id row/data row/order]}]
        {:initial-state (fn [{:keys [id data order] :as params}]
                          {:row/id id :row/data data :row/order order})
         :query         [:row/id :row/data :row/order]}
        (dom/tr #js {:key id}
-               (map #(dom/td #js {:key (str id "-" (first %))} (second %)) (conj {} (select-keys data order)))))
+               (map #(dom/td #js {:key (str id "-" (first %))} (second %))
+                    (conj {} (select-keys data order)))))
 
 (def ui-table-row (prim/factory TableRow {:keyfn :row/id}))
 
