@@ -2,6 +2,11 @@
 
 `fulcro-datatable` is a `fulcro` component inspired by [DataTables](https://datatables.net/).
 
+### Latest release
+
+[![Clojars Project](https://clojars.org/fulcro-datatable/latest-version.svg)](https://clojars.org/fulcro-datatable)
+
+
 ## Usage
 
 `fulcro-datatable` can be used like in the following devcard:
