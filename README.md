@@ -46,8 +46,8 @@
                               :column/sortable true
                               }]
                    :sort    {                          ;; determines the sort order of the rows
-                             :sort/by    :two          ;; the label of the column to sort by
-                             :sort/order :descending   ;; the sort order can be one of #{:ascending, :descending, :none}
+                             :sort/by    :name         ;; the label of the column to sort by
+                             :sort/order :ascending    ;; the sort order can be one of #{:ascending, :descending, :none}
                                                        ;; defaults to :none
                              }})
                 {:inspect-data true})
