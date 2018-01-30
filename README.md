@@ -60,8 +60,6 @@ usually goes into `app.api.read`):
 (defquery-entity :table/by-id
                  "Answer the :table/by-id query. This is how a table is refreshed."
                  (value [env id {:keys [table/sort table/columns] :as params}]
-                        (timbre/info "ID:    " id)
-                        ;(timbre/info "ENV:   " env)
                         (prim/get-initial-state table/Table
                                                 {:id      id       ;; retain the id of the table
                                                  :data    data     ;; compute the new data after sorting
