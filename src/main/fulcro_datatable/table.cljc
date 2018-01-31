@@ -86,8 +86,9 @@
                                     (b/button {:onClick #(df/refresh! this
                                                                       {:params {:table/sort    sort
                                                                                 :table/columns columns
-                                                                                :table/page    (assoc page :page/current current-page)}})
-                                               :key     (str id "-page-button-" current-page)}
+                                                                                :table/page    (assoc page :page/current (inc current-page))}})
+                                               :kind    (if (= (inc current-page) (:page/current page)) :primary)
+                                               :key     (str id "-page-button-" (inc current-page))}
                                               (let
                                                 [first-row (inc (* current-page (:page/pagesize page)))
                                                  last-row (Math/min (:page/total page) (dec (+ first-row (:page/pagesize page))))]
