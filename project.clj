@@ -1,4 +1,4 @@
-(defproject fulcro-datatable "0.1.3"
+(defproject fulcro-datatable "0.2.0"
   :description "A table component for fulcro"
   :license {:name "MIT" :url "https://opensource.org/licenses/MIT"}
   :min-lein-version "2.7.0"
