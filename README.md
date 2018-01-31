@@ -49,7 +49,8 @@
                              :sort/by    :name         ;; the label of the column to sort by
                              :sort/order :ascending    ;; the sort order can be one of #{:ascending, :descending, :none}
                                                        ;; defaults to :none
-                             }})
+                             }}
+                   :styles   #{:bordered :hover})      ;; defaults to #{:striped :bordered :hover}
                 {:inspect-data true})
 ```
 
